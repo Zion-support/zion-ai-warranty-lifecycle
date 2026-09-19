@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zion AI Warranty Lifecycle — Hardware Warranty & EOL/EOSL Tracker</title>
+<meta name="description" content="AI-powered warranty and EOL/EOSL lifecycle tracking for enterprise hardware. Coverage gap alerts, renewal risk scoring, refresh planning. By Zion Tech Group.">
+<style>
+:root{--bg:#0b1020;--card:#131a30;--acc:#4f8cff;--ok:#34d399;--warn:#fbbf24;--bad:#f87171;--txt:#e5e9f5;--mut:#93a0c2}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif}
+body{background:var(--bg);color:var(--txt);line-height:1.6}
+header{padding:56px 24px;text-align:center;background:linear-gradient(160deg,#0b1020,#16204a)}
+header h1{font-size:2.3rem;margin-bottom:12px}
+header h1 span{color:var(--acc)}
+header p{color:var(--mut);max-width:720px;margin:0 auto 22px}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:600;margin:4px}
+.btn.ghost{background:transparent;border:1px solid var(--acc);color:var(--acc)}
+section{max-width:1100px;margin:0 auto;padding:44px 24px}
+h2{font-size:1.7rem;margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--card);border:1px solid #22305a;border-radius:12px;padding:20px}
+.card h3{color:var(--acc);margin-bottom:8px;font-size:1.05rem}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;margin-top:16px;font-size:.92rem}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #22305a}
+th{background:#182242;color:var(--mut);text-transform:uppercase;font-size:.75rem;letter-spacing:.05em}
+.pill{padding:3px 10px;border-radius:999px;font-size:.78rem;font-weight:600}
+.ok{background:rgba(52,211,153,.15);color:var(--ok)}
+.warn{background:rgba(251,191,36,.15);color:var(--warn)}
+.bad{background:rgba(248,113,113,.15);color:var(--bad)}
+.bar{height:8px;background:#22305a;border-radius:4px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;background:var(--acc)}
+footer{text-align:center;padding:32px;color:var(--mut);border-top:1px solid #22305a;font-size:.9rem}
+footer a{color:var(--acc);text-decoration:none;margin:0 8px}
+.net{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.net a{background:var(--card);border:1px solid #22305a;border-radius:8px;padding:8px 14px;color:var(--txt);text-decoration:none;font-size:.88rem}
+.net a:hover{border-color:var(--acc)}
+input,select{background:#0e1530;border:1px solid #22305a;color:var(--txt);padding:9px 12px;border-radius:8px;margin:4px 4px 4px 0;font-size:.9rem}
+button{background:var(--acc);border:none;color:#fff;padding:9px 18px;border-radius:8px;cursor:pointer;font-weight:600}
+</style>
+</head>
+<body>
+<header>
+<h1>Zion AI <span>Warranty Lifecycle</span></h1>
+<p>Never let enterprise hardware slip out of coverage. AI-driven warranty &amp; EOL/EOSL tracking for HPE, Dell, Lenovo, NetApp and mixed fleets — coverage-gap alerts, renewal risk scoring, and refresh planning in one pane.</p>
+<a class="btn" href="https://ziontechgroup.com/discovery/">Book a free Discovery call</a>
+<a class="btn ghost" href="#demo">Try the live demo</a>
+</header>
+<section>
+<h2>What it does</h2>
+<div class="grid">
+<div class="card"><h3>Coverage-gap radar</h3><p>Continuous scan of your asset inventory against OEM warranty databases. Flags servers, storage and network gear drifting out of coverage before it costs you an outage.</p></div>
+<div class="card"><h3>EOL / EOSL forecasting</h3><p>Tracks manufacturer end-of-life and end-of-service-life dates, and scores each asset's refresh urgency so budgets are planned — not panicked.</p></div>
+<div class="card"><h3>Renewal risk score</h3><p>AI weighs asset age, criticality, failure history and support pricing to rank which renewals to sign, extend via third-party maintenance, or retire.</p></div>
+<div class="card"><h3>Procurement-ready output</h3><p>One-click quote packs grouped by site and vendor — built for teams that buy support across HPE, Dell EMC, Lenovo and TPM providers.</p></div>
+</div>
+</section>
+<section id="demo">
+<h2>Live demo — warranty risk snapshot</h2>
+<p style="color:var(--mut)">Add an asset to see the scoring engine in action. Dates are evaluated against today.</p>
+<div style="margin-top:14px">
+<input id="aName" placeholder="Asset (e.g. HPE 3PAR 8200)">
+<input id="aSite" placeholder="Site (e.g. DC São Paulo)">
+<select id="aCrit"><option value="3">Critical</option><option value="2">Important</option><option value="1">Standard</option></select>
+<input id="aEnd" type="date" title="Warranty end date">
+<button onclick="addAsset()">Add asset</button>
+</div>
+<table id="tbl"><thead><tr><th>Asset</th><th>Site</th><th>Warranty ends</th><th>Days left</th><th>Status</th><th>Renewal risk</th></tr></thead><tbody></tbody></table>
+</section>
+<section>
+<h2>Part of the Zion AI apps network</h2>
+<div class="net">
+<a href="https://ziontechgroup.com/">Zion Tech Group</a>
+<a href="https://ziontechgroup.com/zion-ai-field-service-manager/">Field Service Manager</a>
+<a href="https://ziontechgroup.com/zion-ai-resource-scheduler/">Resource Scheduler</a>
+<a href="https://ziontechgroup.com/zion-ai-incident-predictor/">Incident Predictor</a>
+<a href="https://ziontechgroup.com/zion-ai-procurement-automation/">Procurement Automation</a>
+<a href="https://ziontechgroup.com/zion-ai-vendor-manager/">Vendor Manager</a>
+<a href="https://ziontechgroup.com/plans/">Plans &amp; pricing</a>
+<a href="https://ziontechgroup.com/apps/">All apps</a>
+</div>
+</section>
+<footer>
+<strong>Zion Tech Group</strong> — AI &amp; IT services, field engineering and enterprise hardware support.<br><br>
+<a href="https://ziontechgroup.com/contact/">Contact</a>·
+<a href="https://ziontechgroup.com/discovery/">Free Discovery</a>·
+<a href="https://github.com/Zion-support/zion-ai-warranty-lifecycle">Source</a>
+</footer>
+<script>
+const seed=[["HPE 3PAR 8450","DC São Paulo","2027-03-15",3],["Dell PowerEdge R740","FGV Candelária","2026-10-02",3],["NetApp AFF A250","Mucuri Mill","2026-09-25",2],["Lenovo SR650","HQ Curitiba","2028-01-10",1]];
+const tbody=document.querySelector('#tbl tbody');
+function days(d){return Math.ceil((new Date(d)-Date.now())/864e5)}
+function render(rows){tbody.innerHTML='';rows.forEach(r=>{const dd=days(r[2]);const st=dd<0?['Expired','bad']:dd<90?['Expiring soon','warn']:['Covered','ok'];const risk=Math.min(100,Math.round(r[3]*22+Math.max(0,120-Math.max(dd,0))*0.5+(dd<0?30:0)));const rc=risk>70?'bad':risk>40?'warn':'ok';tbody.innerHTML+=`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${dd}</td><td><span class="pill ${st[1]}">${st[0]}</span></td><td><span class="pill ${rc}">${risk}</span><div class="bar"><i style="width:${risk}%"></i></div></td></tr>`})}
+function addAsset(){const n=document.getElementById('aName').value,s=document.getElementById('aSite').value,c=document.getElementById('aCrit').value,d=document.getElementById('aEnd').value;if(!n||!d)return alert('Asset name and warranty end date required');seed.push([n,s||'—',d,+c]);render(seed)}
+render(seed);
+</script>
+</body>
+</html>
